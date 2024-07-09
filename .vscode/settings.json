@@ -24,6 +24,7 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": true,
   "liveServer.settings.root": "/",
+  "livePreview.autoRefreshPreview":"On All Changes in Editor",
   "prettier.enable": true,
   "eslint.alwaysShowStatus": false,
   "liveServer.settings.donotVerifyTags": true,
