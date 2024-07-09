@@ -1,0 +1,20 @@
+.address label,
+street-address label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.address label input,
+street-address label input {
+    display: block;
+}
+
+.address .state input,
+street-address .state input {
+    width: 4em;
+}
+
+.address .postal-code input,
+street-address .postal-code input {
+    width: 12em;
+}

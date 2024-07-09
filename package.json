@@ -1,0 +1,14 @@
+{
+    "name": "building-website-interactivity-with-javascript",
+    "author": "Joe Chellman",
+    "version": "1.0.0",
+    "description": "Exercise files for the LinkedIn Learning course",
+    "dependencies": {
+        "prettier": "^3.3.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LinkedInLearning/building-website-interactivity-with-javascript--codespaces--4567087.git"
+    },
+    "private": true
+}

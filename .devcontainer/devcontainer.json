@@ -1,14 +1,17 @@
 {
-  "extensions": [
-    "GitHub.github-vscode-theme",
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "ritwickdey.LiveServer",
-    "stylelint.vscode-stylelint"
-    // Additional Extensions Here
-  ],
-  "onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc", //Set Terminal Prompt to $
-  "postAttachCommand": "git pull --all"  
+    "extensions": [
+        "GitHub.github-vscode-theme",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ritwickdey.LiveServer",
+        "stylelint.vscode-stylelint",
+        "ms-vscode.live-server"
+        // Additional Extensions Here
+    ],
+    // Set Terminal Prompt to $	
+    "onCreateCommand": "echo PS1='\"$ \"' >> ~/.bashrc",
+    "postAttachCommand": "git pull --all",
+    "postCreateCommand": "npm install"
 }
 
 // DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference

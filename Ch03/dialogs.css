@@ -1,0 +1,99 @@
+#info-chef-g {
+    display: none;
+}
+
+#dining button {
+    font-family: "Exo 2", helvetica, sans-serif;
+    background: #DF4848;
+    color: white;
+    border: 1px solid #DF4848;
+    border-radius: 0.3em;
+    padding: 0.5em;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+#dining button:hover,
+#dining button:focus {
+    background: #EFC94C;
+    color: #063642;
+    border-color: #EFC94C;
+}
+
+#dining .modal-dialog-backdrop {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#dining .modal-dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: white;
+    border: 2px solid #063642;
+    border-radius: 0.3em;
+    padding: 1rem;
+}
+
+dialog {
+    background: white;
+    color: black;
+    margin: auto;
+    padding: 0;
+    border: 2px solid #063642;
+    border-radius: 0.3em;
+}
+
+.dialog--header {
+    margin: 0 0 0.5em;
+    padding: 0.5em;
+    font-size: 1rem;
+    background: #063642;
+    color: white;
+    font-weight: 600;
+}
+
+#dining .dialog--header {
+    color: white;
+    padding-left: 0.5em;
+}
+
+.dialog--content {
+    padding: 0 0.5em 0.5em;
+}
+
+.dialog--content p {
+    margin: 0 0 0.5em;
+}
+
+#dining .btn--dialog-close {
+    font-size: 0.9em;
+    font-weight: normal;
+    background: transparent;
+    color: white;
+    border: none;
+    position: absolute;
+    top: 0.1em;
+    right: 0;
+}
+
+#dining .btn--dialog-close:hover,
+#dining .btn--dialog-close:focus {
+    background: #127891;
+    color: white;
+}
+
+::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}

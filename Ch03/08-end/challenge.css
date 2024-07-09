@@ -1,0 +1,22 @@
+.dialog--message {
+    position: relative;
+    border: 3px solid #ddd;
+    border-radius: 2px;
+    margin: 0 0 1em;
+    width: 33rem;
+    text-align: center;
+}
+
+.dialog--message--success {
+    background: #ddffdd;
+    border-color: rgba(126, 155, 126, 0.38);
+    color: #003300;
+}
+
+.dialog--message--error {
+    background: #ffdddd;
+    border-color: #996666;
+    color: #330000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}

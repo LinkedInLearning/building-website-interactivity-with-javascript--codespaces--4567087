@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+    <title>Tables</title>
+    <style>
+        @import url(../tables.css);
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>The Coolest Game Store EVAR</h1>
+
+        <table aria-label="Games consoles for sale">
+            <caption>
+                Game consoles currently for sale in our store<span class="sr-only">, column headers with buttons are sortable</span>.
+            </caption>
+            <thead>
+            <tr>
+                <th scope="col" id="header-name" class="sortable" role="button">Name</th>
+                <th scope="col" id="header-desc">Description</th>
+                <th scope="col" id="header-stock" class="sortable" role="button">Stock</th>
+                <th scope="col" id="header-price" aria-sort="ascending" class="sortable" role="button">Price (USD)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Playdate</th>
+                <td>Console with a crank</td>
+                <td>98</td>
+                <td>199</td>
+
+            <tr>
+                <th scope="row">Xbox Series</th>
+                <td>Microsoft's popular console</td>
+                <td>184</td>
+                <td>299</td>
+            </tr>
+            <tr>
+                <th scope="row">Nintendo Switch</th>
+                <td>A hybrid system, handheld or docked</td>
+                <td>76</td>
+                <td>399</td>
+            </tr>
+            <tr>
+                <th scope="row">Steam Deck</th>
+                <td>Valve's first handheld</td>
+                <td>49</td>
+                <td>499</td>
+            </tr>
+            <tr>
+                <th scope="row">Steam Deck OLED</th>
+                <td>The upgraded version of the original</td>
+                <td>102</td>
+                <td>699</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p class="credit">
+            Made with 💚 by Coolest Game Store LLC.
+        </p>
+    </div>
+</div>
+<script src="tables.js"></script>
+</body>
+</html>

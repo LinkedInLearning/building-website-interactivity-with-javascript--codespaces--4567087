@@ -1,0 +1,30 @@
+#component-challenge {
+    padding: 1em 0 4em;
+}
+
+#component-challenge h3 {
+    margin-bottom: 0.5em;
+}
+
+line-item,
+.line-item {
+    display: block;
+    margin: 0 0 0.5em;
+}
+
+.line-item label,
+line-item label {
+    margin-right: 2em;
+}
+
+.line-item--qty {
+    width: 5em;
+}
+
+.line-item--price {
+    width: 6em;
+}
+
+.line-item--subtotal {
+    width: 8em;
+}

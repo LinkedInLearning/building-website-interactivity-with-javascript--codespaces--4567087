@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+    <title>Bookstore Challenge</title>
+    <style>
+        @import url(bookstore.css);
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>The Coolest Bookstore Store Ever!</h1>
+
+        <table aria-label="Books for sale">
+            <caption>
+                Books currently for sale in our store<span class="sr-only">, column headers with buttons are sortable</span>.
+            </caption>
+            <thead>
+            <tr>
+                <th scope="col" id="header-title" class="sortable" role="button">Title</th>
+                <th scope="col" id="header-author" class="sortable" role="button">Author</th>
+                <th scope="col" id="header-price" class="sortable" role="button">Price (USD)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">G. Willow Wilson</th>
+                <td>Ms Marvel (2014) v3</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th scope="row">Susanna Clarke</th>
+                <td>Piranesi</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <th scope="row">Octavia Butler</th>
+                <td>Parable of the Talents</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <th scope="row">Daniel Kraus</th>
+                <td>Whalefall</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <th scope="row">G. Willow Wilson</th>
+                <td>Ms Marvel (2014) v1</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th scope="row">Lorrie Moore</th>
+                <td>Self-Help</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <th scope="row">Lorrie Moore</th>
+                <td>Birds of America</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <th scope="row">Octavia Butler</th>
+                <td>Parable of the Sower</td>
+                <td>15</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p class="credit">
+            Made with 💚 by Coolest Book Store LLC.
+        </p>
+    </div>
+</div>
+<script src="bookstore.js"></script>
+</body>
+</html>
