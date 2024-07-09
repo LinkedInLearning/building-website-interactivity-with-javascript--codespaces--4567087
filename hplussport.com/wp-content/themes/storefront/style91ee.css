@@ -2502,3 +2502,7 @@ button.menu-toggle {
         margin: 0 0 1em;
     }
 }
+
+.storefront-handheld-footer-bar {
+  display: none !important;
+}
