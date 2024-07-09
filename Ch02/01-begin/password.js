@@ -2,4 +2,4 @@
 
 window.addEventListener('DOMContentLoaded', () => {
     
-})
+});
