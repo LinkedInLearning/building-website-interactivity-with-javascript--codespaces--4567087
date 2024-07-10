@@ -3,7 +3,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const btnGirado = document.querySelector('#btn-chef-g');
     const dialogGirardo = document.querySelector('#dlg-chef-g');
-    const btnStiles = document.querySelector('#btn-chef-s');
     const btnClose = document.querySelector('.btn--dialog-close');
 
     btnGirado.addEventListener('click', evt => {

@@ -26,10 +26,10 @@
           <button id="btn-chef-g">Read about Chef Girado</button>
         </p>
 
-        <dialog id="dlg-chef-g">
+        <dialog id="dlg-chef-g" aria-labelledby="header-chef-g" aria-describedby="content-chef-g">
           <button autofocus aria-label="Close the dialog" class="btn--dialog-close">𝗫</button>
-          <h2 class="dialog--header">Chef Girado</h2>
-          <div class="dialog--content">
+          <h2 class="dialog--header" id="header-chef-g">Chef Girado</h2>
+          <div class="dialog--content" id="content-chef-g">
             <p>
               Chef Girado trained in Paris and has a degree in cuisinology from Tufts.
             </p>
@@ -47,8 +47,8 @@
         </p>
 
         <div class="modal-dialog-backdrop">
-          <div class="modal-dialog">
-            <h3>Chef Stiles</h3>
+          <div class="modal-dialog" role="dialog" aria-labelledby="header-stiles">
+            <h3 id="header-stiles">Chef Stiles</h3>
 
             <p>A world-renowned smoothie mixologist, Chef Stiles, is never too far from a Vitamix.</p>
 
