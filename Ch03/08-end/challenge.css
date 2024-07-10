@@ -3,7 +3,8 @@
     border: 3px solid #ddd;
     border-radius: 2px;
     margin: 0 0 1em;
-    width: 33rem;
+    width: 100%;
+    max-width: 33rem;
     text-align: center;
 }
 

@@ -4,18 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // This won't work now, since there's more than one
     // const btnClose = document.querySelector('.btn--dialog-close');
 
-    /*
-    // Loop?  It would work.
-    const btnsClose = document.querySelectorAll('.btn--dialog-close');
-    btnsClose.forEach(btn => {
-        btn.addEventListener('click', evt => {
-            evt.preventDefault();
-
-            dialogGirardo.close();
-        })
-    })
-    */
-
     // Better to delegate
     const inHotelSection = document.querySelector('#inhotel');
 
