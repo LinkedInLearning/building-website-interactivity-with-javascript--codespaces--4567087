@@ -47,7 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
     switch (targetId) {
       case 'header-title':
         sortKey = 1;
-        sortSubKey = 0;
         break;
       case 'header-author':
         sortKey = 0;
@@ -80,12 +79,12 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       if (a[sortKey] === b[sortKey]) {
-        if (a[sortSubKey] < b[sortSubKey]) {
+        if (a[sortSubKey] === b[sortSubKey]) {
+          return 0;
+        } else if (a[sortSubKey] < b[sortSubKey]) {
           return sortDirection === 'ascending' ? -1 : 1;
         } else if (a[sortSubKey] > b[sortSubKey]) {
           return sortDirection === 'ascending' ? 1 : -1;
-        } else if (a[sortSubKey] === b[sortSubKey]) {
-          return 0;
         } else {
           console.error('Error with sort sub key', a, b, sortKey, sortSubKey);
         }
