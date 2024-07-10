@@ -1,0 +1,121 @@
+@import url(../assets/fonts/inter.css);
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --base-size: 30px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: InterVariable, Helvetica, Arial, sans-serif;
+}
+
+.container {
+    background: #fff;
+    color: black;
+    min-height: 100vh;
+    position: relative;
+}
+
+.content {
+    width: 90%;
+    max-width: 48em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin: 0;
+    padding: 0.5em 0 1em;
+}
+
+.board {
+    position: absolute;
+    top: 90px;
+    user-select: none;
+
+    --square-size: calc(var(--base-size) * 2);
+}
+
+.slots {
+    position: relative;
+}
+
+.slot {
+    font-size: var(--base-size);
+    line-height: var(--square-size);
+    width: var(--square-size);
+    height: var(--square-size);
+    border: 1px dashed #999;
+    display: inline-block;
+    margin: calc(var(--base-size) * 0.5);
+}
+
+.tiles {
+    min-height: 10rem;
+}
+
+.tiles .tile {
+    font-size: var(--base-size);
+    line-height: var(--square-size);
+    width: var(--square-size);
+    height: var(--square-size);
+    text-align: center;
+    border: 1px solid #222;
+    position: absolute;
+    background: white;
+    transition: background-color 0.25s;
+    user-select: none;
+}
+
+.tiles .tile:hover {
+    background: yellow;
+    border-color: #000;
+    cursor: grab;
+}
+
+.tiles .tile:active {
+    background: yellow;
+    border-color: #000;
+    cursor: grabbing;
+}
+
+.tiles .tile:nth-child(1) {
+    top: 5rem;
+    left: 8rem;
+    transform: rotate(13deg);
+}
+
+.tiles .tile:nth-child(2) {
+    top: 4.5rem;
+    left: 11rem;
+    transform: rotate(-3deg);
+}
+
+.tiles .tile:nth-child(3) {
+    top: 5.5rem;
+    left: 1rem;
+    transform: rotate(8deg);
+}
+
+.tiles .tile:nth-child(4) {
+    top: 8rem;
+    left: 20rem;
+    transform: rotate(-10deg);
+}
+
+.tiles .tile:nth-child(5) {
+    top: 3.5rem;
+    left: 25rem;
+    transform: rotate(6deg);
+}
+
+.tiles .tile:nth-child(6) {
+    top: 11rem;
+    left: 27rem;
+    transform: rotate(23deg);
+}
