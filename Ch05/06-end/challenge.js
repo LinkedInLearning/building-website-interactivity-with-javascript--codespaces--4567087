@@ -24,9 +24,11 @@ window.addEventListener('DOMContentLoaded', () => {
           ''
         );
         const price = parseFloat(priceOnlyNumbers);
+        const priceCents = Math.round(price * 100);
+        const subtotalCents = priceCents * qty;
 
         // Update the subtotal with currency formatting
-        fldSubtotal.value = '$' + (qty * price).toFixed(2);
+        fldSubtotal.value = '$' + (subtotalCents / 100).toFixed(2);
 
         // Update the price field with currency as well
         formattedPrice = '$' + price.toFixed(2);
