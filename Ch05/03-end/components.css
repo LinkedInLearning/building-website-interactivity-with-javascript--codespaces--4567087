@@ -1,3 +1,7 @@
+street-address:not(:defined) {
+    display: none;
+}
+
 .address label,
 street-address label {
     display: block;
