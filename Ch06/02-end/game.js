@@ -1,42 +1,42 @@
-"use strict";
+'use strict';
 
 window.addEventListener('DOMContentLoaded', () => {
-    const boardRegion = document.querySelector('.board');
-    const slotsRegion = document.querySelector('.slots');
-    const tilesRegion = document.querySelector('.tiles');
+  const boardRegion = document.querySelector('.board');
+  const slotsRegion = document.querySelector('.slots');
+  const tilesRegion = document.querySelector('.tiles');
 
-    let currentSolution = [];
+  let currentSolution = [];
 
-    function addTileToSolution(tile) {
-        const letter = tile.dataset.letter;
+  function addTileToSolution(tile) {
+    const letter = tile.dataset.letter;
 
-        const targetSlotIndex = currentSolution.length + 1;
-        const targetSlot = document.querySelector(`#slot-${targetSlotIndex}`);
+    const targetSlotIndex = currentSolution.length + 1;
+    const targetSlot = document.querySelector(`#slot-${targetSlotIndex}`);
 
-        // No slots left
-        if (!targetSlot) {
-            return;
-        }
-
-        currentSolution.push(letter);
-        console.log('Solution so far:', currentSolution.join(''));
-
-        tile.style.left = targetSlot.offsetLeft + 'px';
-        tile.style.top = targetSlot.offsetTop + 'px';
-        tile.style.transform = 'none';
+    // No slots left
+    if (!targetSlot) {
+      return;
     }
 
-    tilesRegion.addEventListener('click', evt => {
-        evt.preventDefault();
+    currentSolution.push(letter);
+    console.log('Solution so far:', currentSolution.join(''));
 
-        const tile = evt.target;
+    tile.style.left = targetSlot.offsetLeft + 'px';
+    tile.style.top = targetSlot.offsetTop + 'px';
+    tile.style.transform = 'none';
+  }
 
-        if (!tile.matches('.tile')) {
-            return;
-        }
+  tilesRegion.addEventListener('click', (evt) => {
+    evt.preventDefault();
 
-        if (currentSolution.indexOf(tile.dataset.letter) === -1) {
-            addTileToSolution(tile);
-        }
-    });
-})
+    const tile = evt.target;
+
+    if (!tile.matches('.tile')) {
+      return;
+    }
+
+    if (currentSolution.indexOf(tile.dataset.letter) === -1) {
+      addTileToSolution(tile);
+    }
+  });
+});

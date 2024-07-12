@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let currentSolution = [];
 
   // Store all original tile positions for reset purposes
-  tilesRegion.querySelectorAll('.tile').forEach(tile => {
+  tilesRegion.querySelectorAll('.tile').forEach((tile) => {
     const originalStyle = getComputedStyle(tile);
 
     tile.dataset.originalLeft = originalStyle.getPropertyValue('left');
@@ -96,20 +96,20 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const resetSlots = () => {
-    slotsRegion.querySelectorAll('.slot').forEach(slot => {
+    slotsRegion.querySelectorAll('.slot').forEach((slot) => {
       slot.classList.remove('hover');
     });
-  }
+  };
 
-  tilesRegion.addEventListener('dragstart', evt => {
+  tilesRegion.addEventListener('dragstart', (evt) => {
     const target = evt.target;
 
     evt.dataTransfer.setData('text/plain', target.dataset.letter);
-    evt.dataTransfer.effectAllowed = "move";
-    evt.dataTransfer.setDragImage(evt.target, 30, 30)
+    evt.dataTransfer.effectAllowed = 'move';
+    evt.dataTransfer.setDragImage(evt.target, 30, 30);
   });
 
-  slotsRegion.addEventListener('dragover', evt => {
+  slotsRegion.addEventListener('dragover', (evt) => {
     evt.preventDefault();
     let target = evt.target;
 
@@ -118,17 +118,17 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  slotsRegion.addEventListener('dragenter', evt => {
+  slotsRegion.addEventListener('dragenter', (evt) => {
     evt.preventDefault();
   });
 
-  slotsRegion.addEventListener('dragleave', evt => {
+  slotsRegion.addEventListener('dragleave', (evt) => {
     evt.preventDefault();
 
     resetSlots();
   });
 
-  slotsRegion.addEventListener('drop', evt => {
+  slotsRegion.addEventListener('drop', (evt) => {
     evt.preventDefault();
 
     const myLetter = evt.dataTransfer.getData('text/plain');
@@ -142,15 +142,15 @@ window.addEventListener('DOMContentLoaded', () => {
     resetSlots();
   });
 
-  tilesRegion.addEventListener('dragenter', evt => {
+  tilesRegion.addEventListener('dragenter', (evt) => {
     evt.preventDefault();
   });
 
-  tilesRegion.addEventListener('dragover', evt => {
+  tilesRegion.addEventListener('dragover', (evt) => {
     evt.preventDefault();
   });
 
-  tilesRegion.addEventListener('drop', evt => {
+  tilesRegion.addEventListener('drop', (evt) => {
     evt.preventDefault();
 
     const myLetter = evt.dataTransfer.getData('text/plain');

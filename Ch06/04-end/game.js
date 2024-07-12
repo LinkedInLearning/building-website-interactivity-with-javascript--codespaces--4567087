@@ -7,14 +7,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let currentSolution = [];
 
-    // Store all original tile positions for reset purposes
-    tilesRegion.querySelectorAll('.tile').forEach(tile => {
-        const originalStyle = getComputedStyle(tile);
+  // Store all original tile positions for reset purposes
+  tilesRegion.querySelectorAll('.tile').forEach((tile) => {
+    const originalStyle = getComputedStyle(tile);
 
-        tile.dataset.originalLeft = originalStyle.getPropertyValue('left');
-        tile.dataset.originalTop = originalStyle.getPropertyValue('top');
-        tile.dataset.originalTransform = originalStyle.getPropertyValue('transform');
-    });
+    tile.dataset.originalLeft = originalStyle.getPropertyValue('left');
+    tile.dataset.originalTop = originalStyle.getPropertyValue('top');
+    tile.dataset.originalTransform =
+      originalStyle.getPropertyValue('transform');
+  });
 
   function addTileToSolution(tile) {
     const letter = tile.dataset.letter;
