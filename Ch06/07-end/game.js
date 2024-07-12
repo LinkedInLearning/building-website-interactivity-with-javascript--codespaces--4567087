@@ -106,11 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     evt.dataTransfer.setData('text/plain', target.dataset.letter);
     evt.dataTransfer.effectAllowed = "move";
-    evt.dataTransfer.setDragImage(evt.target, 30, 30);
-  });
-
-  slotsRegion.addEventListener('dragenter', evt => {
-    evt.preventDefault();
+    evt.dataTransfer.setDragImage(evt.target, 30, 30)
   });
 
   slotsRegion.addEventListener('dragover', evt => {
@@ -122,8 +118,48 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  slotsRegion.addEventListener('dragenter', evt => {
+    evt.preventDefault();
+  });
+
   slotsRegion.addEventListener('dragleave', evt => {
     evt.preventDefault();
+
+    resetSlots();
+  });
+
+  slotsRegion.addEventListener('drop', evt => {
+    evt.preventDefault();
+
+    const myLetter = evt.dataTransfer.getData('text/plain');
+
+    if (currentSolution.indexOf(myLetter) === -1) {
+      const tile = document.querySelector(`.tile[data-letter=${myLetter}]`);
+
+      addTileToSolution(tile);
+    }
+
+    resetSlots();
+  });
+
+  tilesRegion.addEventListener('dragenter', evt => {
+    evt.preventDefault();
+  });
+
+  tilesRegion.addEventListener('dragover', evt => {
+    evt.preventDefault();
+  });
+
+  tilesRegion.addEventListener('drop', evt => {
+    evt.preventDefault();
+
+    const myLetter = evt.dataTransfer.getData('text/plain');
+
+    if (currentSolution.indexOf(myLetter) !== -1) {
+      const tile = document.querySelector(`.tile[data-letter=${myLetter}]`);
+
+      removeTileFromSolution(tile);
+    }
 
     resetSlots();
   });

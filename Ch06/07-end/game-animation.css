@@ -1,0 +1,9 @@
+.tiles .tile {
+    transition: background-color 0.25s, left 0.25s, top 0.25s, transform 0.5s;
+}
+
+@media (prefers-reduced-motion) {
+    .tiles .tile {
+        transition: background-color 0.25s;
+    }
+}
