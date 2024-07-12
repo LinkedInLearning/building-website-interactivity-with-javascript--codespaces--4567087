@@ -23,7 +23,7 @@ body {
 
 .content {
     width: 90%;
-    max-width: 48em;
+    max-width: 768px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -39,10 +39,15 @@ h1 {
     user-select: none;
 
     --square-size: calc(var(--base-size) * 2);
+
+    border: 2px solid #965b50;
+    width: calc(var(--base-size) * 20);
+    height: calc(var(--base-size) * 10);
 }
 
 .slots {
     position: relative;
+    height: calc(var(--base-size) * 3.2);
 }
 
 .slot {
@@ -55,8 +60,14 @@ h1 {
     margin: calc(var(--base-size) * 0.5);
 }
 
+.slot.hover {
+    background: #f1f190;
+    border-style: solid;
+}
+
 .tiles {
-    min-height: 10rem;
+    height: calc(var(--base-size) * 6.75);
+    /*border: 1px dotted #aaa;*/
 }
 
 .tiles .tile {
@@ -73,49 +84,49 @@ h1 {
 }
 
 .tiles .tile:hover {
-    background: yellow;
+    background: #ffff9c;
     border-color: #000;
     cursor: grab;
 }
 
 .tiles .tile:active {
-    background: yellow;
+    background: #ffff9c;
     border-color: #000;
     cursor: grabbing;
 }
 
 .tiles .tile:nth-child(1) {
-    top: 5rem;
-    left: 8rem;
+    top: 90px;
+    left: 160px;
     transform: rotate(13deg);
 }
 
 .tiles .tile:nth-child(2) {
-    top: 4.5rem;
-    left: 11rem;
+    top: 182px;
+    left: 120px;
     transform: rotate(-3deg);
 }
 
 .tiles .tile:nth-child(3) {
-    top: 5.5rem;
-    left: 1rem;
+    top: 102px;
+    left: 16px;
     transform: rotate(8deg);
 }
 
 .tiles .tile:nth-child(4) {
-    top: 8rem;
-    left: 20rem;
+    top: 128px;
+    left: 320px;
     transform: rotate(-10deg);
 }
 
 .tiles .tile:nth-child(5) {
-    top: 3.5rem;
-    left: 25rem;
+    top: 136px;
+    left: 400px;
     transform: rotate(6deg);
 }
 
 .tiles .tile:nth-child(6) {
-    top: 11rem;
-    left: 27rem;
+    top: 176px;
+    left: 212px;
     transform: rotate(23deg);
 }
