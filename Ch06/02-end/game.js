@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     currentSolution.push(letter);
-    console.log('Solution so far:', currentSolution.join(''));
+    console.log('Solution so far:', currentSolution);
 
     tile.style.left = targetSlot.offsetLeft + 'px';
     tile.style.top = targetSlot.offsetTop + 'px';

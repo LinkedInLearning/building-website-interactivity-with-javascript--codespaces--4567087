@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     currentSolution.push(letter);
-    console.log('Solution so far:', currentSolution.join(''));
+    console.log('Solution so far:', currentSolution);
 
     tile.style.left = targetSlot.offsetLeft + 'px';
     tile.style.top = targetSlot.offsetTop + 'px';
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     currentSolution = currentSolution.slice(0, -1);
-    console.log('Solution so far:', currentSolution.join(''));
+    console.log('Solution so far:', currentSolution);
 
     tile.style.left = tile.dataset.originalLeft;
     tile.style.top = tile.dataset.originalTop;
