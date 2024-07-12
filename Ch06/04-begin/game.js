@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     tile.style.transform = 'none';
   }
 
-  function removeLetterFromSolution(tile) {
+  function removeTileFromSolution(tile) {
     const letter = tile.dataset.letter;
 
     // remove the letter from the solution, restore the tile
@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (currentSolution.indexOf(tile.dataset.letter) === -1) {
       addTileToSolution(tile);
     } else {
-      removeLetterFromSolution(tile);
+      removeTileFromSolution(tile);
     }
   });
 });
