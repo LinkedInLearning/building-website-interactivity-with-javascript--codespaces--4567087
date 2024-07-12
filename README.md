@@ -1,4 +1,5 @@
 # Building Website Interactivity with JavaScript
+
 This is the repository for the LinkedIn Learning course `Building Website Interactivity with JavaScript`. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ## Instructions
@@ -10,9 +11,10 @@ It is assumed that you'll be coding along with the instructor.  In many cases th
 This course does not uses branches. Everything is contained in the `main` branch.
 
 ## Installing
+
 1. To use these exercise files, you should have the following installed:
 	- A text editor or IDE like [Visual Studio Code](https://code.visualstudio.com/) or [WebStorm](https://jetbrains.com/webstorm/)
-    - A web browser you like.  If you can read this document, you already do!
+    - A preferred web browser.  If you can read this document, you already do!
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like [Fork](https://fork.dev/). 
    - You can also download the files by choosing Download Zip under the Code dropdown button. 
 
