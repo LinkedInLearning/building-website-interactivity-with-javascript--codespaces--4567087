@@ -96,18 +96,18 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const resetSlots = () => {
+  function resetSlots() {
     slotsRegion.querySelectorAll('.slot').forEach((slot) => {
       slot.classList.remove('hover');
     });
-  };
+  }
 
   tilesRegion.addEventListener('dragstart', (evt) => {
     const target = evt.target;
 
     evt.dataTransfer.setData('text/plain', target.dataset.letter);
     evt.dataTransfer.effectAllowed = 'move';
-    evt.dataTransfer.setDragImage(evt.target, 30, 30);
+    evt.dataTransfer.setDragImage(target, 30, 30);
   });
 
   slotsRegion.addEventListener('dragenter', (evt) => {
