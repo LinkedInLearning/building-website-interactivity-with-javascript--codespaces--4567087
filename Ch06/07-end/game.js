@@ -73,19 +73,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Listen for presses of the A-F keys and delete
   document.addEventListener('keyup', (evt) => {
-    const evtCode = evt.code.toLowerCase();
+    const keyPressed = evt.key.toLowerCase();
+
     if (
       currentSolution.length > 0 &&
-      (evtCode === 'backspace' || evtCode === 'delete')
+      (keyPressed === 'backspace' || keyPressed === 'delete')
     ) {
       // remove the letter from the solution, restore the tile
       const lastLetter = currentSolution.slice(-1);
       const tile = document.querySelector(`.tile[data-letter=${lastLetter}]`);
 
       removeTileFromSolution(tile);
-    } else if (evtCode.match(/key[a-f]/)) {
+    } else if (keyPressed.match(/^[a-f]$/)) {
       // Thank goodness we don't have to write a separate if block for every letter code!
-      const myLetter = evtCode.match(/key([a-f])/i)[1];
+      const myLetter = keyPressed.match(/^[a-f]$/)[0];
 
       if (currentSolution.indexOf(myLetter) === -1) {
         const tile = document.querySelector(`.tile[data-letter=${myLetter}]`);
