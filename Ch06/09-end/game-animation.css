@@ -1,0 +1,35 @@
+.tiles .tile {
+    transition: background-color 0.25s, left 0.25s, top 0.25s, transform 0.25s;
+}
+
+@media (prefers-reduced-motion) {
+    .tiles .tile {
+        transition: background-color 0.25s;
+    }
+}
+
+.messages {
+    position: absolute;
+    top: calc(var(--base-size) * 13.5);
+    width: calc(var(--base-size) * 20);
+}
+
+.messages dialog {
+    width: 100%;
+    border: 2px solid #ddd;
+    text-align: center;
+}
+
+.messages .message--correct {
+    background: #cdeed5;
+    color: #1f3d1f;
+    border-color: #003300;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.messages .message--incorrect {
+    background: #f8f9d5;
+    color: #3f3b35;
+    border-color: #ce0909;
+}
