@@ -110,6 +110,10 @@ window.addEventListener('DOMContentLoaded', () => {
     evt.dataTransfer.setDragImage(evt.target, 30, 30);
   });
 
+  slotsRegion.addEventListener('dragenter', (evt) => {
+    evt.preventDefault();
+  });
+
   slotsRegion.addEventListener('dragover', (evt) => {
     evt.preventDefault();
     let target = evt.target;
@@ -117,10 +121,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (target.matches('.slot')) {
       target.classList.add('hover');
     }
-  });
-
-  slotsRegion.addEventListener('dragenter', (evt) => {
-    evt.preventDefault();
   });
 
   slotsRegion.addEventListener('dragleave', (evt) => {
