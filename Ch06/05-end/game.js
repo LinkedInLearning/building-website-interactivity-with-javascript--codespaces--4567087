@@ -95,27 +95,37 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  tilesRegion.addEventListener('dragstart', evt => {
-    let target = evt.target;
+  const resetSlots = () => {
+    slotsRegion.querySelectorAll('.slot').forEach(slot => {
+      slot.classList.remove('hover');
+    });
+  }
 
-    console.log('dragstart target', target);
+  tilesRegion.addEventListener('dragstart', evt => {
+    const target = evt.target;
 
     evt.dataTransfer.setData('text/plain', target.dataset.letter);
     evt.dataTransfer.effectAllowed = "move";
+    evt.dataTransfer.setDragImage(evt.target, 30, 30)
   });
 
   slotsRegion.addEventListener('dragover', evt => {
     evt.preventDefault();
+    let target = evt.target;
+
+    if (target.matches('.slot')) {
+      target.classList.add('hover');
+    }
   });
 
-  tilesRegion.addEventListener('dragover', evt => {
+  slotsRegion.addEventListener('dragleave', evt => {
     evt.preventDefault();
+
+    resetSlots('dragleave slots');
   });
 
   slotsRegion.addEventListener('drop', evt => {
     evt.preventDefault();
-
-    console.log('drop', evt.target, evt.dataTransfer.getData('text/plain'));
 
     const myLetter = evt.dataTransfer.getData('text/plain');
 
@@ -124,12 +134,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
       addTileToSolution(tile);
     }
+
+    resetSlots();
+  });
+
+  tilesRegion.addEventListener('dragover', evt => {
+    evt.preventDefault();
   });
 
   tilesRegion.addEventListener('drop', evt => {
     evt.preventDefault();
-
-    console.log('drop', evt.target, evt.dataTransfer.getData('text/plain'));
 
     const myLetter = evt.dataTransfer.getData('text/plain');
 
@@ -138,5 +152,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       removeTileFromSolution(tile);
     }
+
+    resetSlots();
   });
 });

@@ -7,6 +7,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let currentSolution = [];
 
+    // Store all original tile positions for reset purposes
+    tilesRegion.querySelectorAll('.tile').forEach(tile => {
+        const originalStyle = getComputedStyle(tile);
+
+        tile.dataset.originalLeft = originalStyle.getPropertyValue('left');
+        tile.dataset.originalTop = originalStyle.getPropertyValue('top');
+        tile.dataset.originalTransform = originalStyle.getPropertyValue('transform');
+    });
+
   function addTileToSolution(tile) {
     const letter = tile.dataset.letter;
 
@@ -20,16 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     currentSolution.push(letter);
     console.log('Solution so far:', currentSolution.join(''));
-
-    // Store the tile's original location if needed
-    if (!tile.dataset.originalLeft) {
-      const originalStyle = getComputedStyle(tile);
-
-      tile.dataset.originalLeft = originalStyle.getPropertyValue('left');
-      tile.dataset.originalTop = originalStyle.getPropertyValue('top');
-      tile.dataset.originalTransform =
-        originalStyle.getPropertyValue('transform');
-    }
 
     tile.style.left = targetSlot.offsetLeft + 'px';
     tile.style.top = targetSlot.offsetTop + 'px';

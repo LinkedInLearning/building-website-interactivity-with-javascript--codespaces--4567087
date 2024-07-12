@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 window.addEventListener('DOMContentLoaded', () => {
     const boardRegion = document.querySelector('.board');
@@ -6,6 +6,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const tilesRegion = document.querySelector('.tiles');
 
     let currentSolution = [];
+
+    // Store all original tile positions for reset purposes
+    tilesRegion.querySelectorAll('.tile').forEach(tile => {
+        const originalStyle = getComputedStyle(tile);
+
+        tile.dataset.originalLeft = originalStyle.getPropertyValue('left');
+        tile.dataset.originalTop = originalStyle.getPropertyValue('top');
+        tile.dataset.originalTransform = originalStyle.getPropertyValue('transform');
+    });
 
     function addTileToSolution(tile) {
         const letter = tile.dataset.letter;
@@ -20,16 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         currentSolution.push(letter);
         console.log('Solution so far:', currentSolution.join(''));
-
-        // Store the tile's original location if needed
-        if (!tile.dataset.originalLeft) {
-            const originalStyle = getComputedStyle(tile);
-
-            tile.dataset.originalLeft = originalStyle.getPropertyValue('left');
-            tile.dataset.originalTop = originalStyle.getPropertyValue('top');
-            tile.dataset.originalTransform = originalStyle.getPropertyValue('transform');
-        }
-
 
         tile.style.left = targetSlot.offsetLeft + 'px';
         tile.style.top = targetSlot.offsetTop + 'px';
@@ -55,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
         tile.style.transform = tile.dataset.originalTransform;
     }
 
-    tilesRegion.addEventListener('click', evt => {
+    tilesRegion.addEventListener('click', (evt) => {
         evt.preventDefault();
 
         const tile = evt.target;
@@ -72,9 +71,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Listen for presses of the A-F keys and delete
-    document.addEventListener('keyup', evt => {
+    document.addEventListener('keyup', (evt) => {
         const evtCode = evt.code.toLowerCase();
-        if (currentSolution.length > 0 && (evtCode === 'backspace' || evtCode === 'delete')) {
+        if (
+          currentSolution.length > 0 &&
+          (evtCode === 'backspace' || evtCode === 'delete')
+        ) {
             // remove the letter from the solution, restore the tile
             const lastLetter = currentSolution.slice(-1);
             const tile = document.querySelector(`.tile[data-letter=${lastLetter}]`);
@@ -91,4 +93,4 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-})
+});
